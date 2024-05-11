@@ -1,0 +1,26 @@
+﻿@model WeatherReport.ViewModel.CityViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="col-xs-1" align="center">
+        @using (Html.BeginForm("GetWeather", "Weather", FormMethod.Post))
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <div class="form-group" style="padding-bottom: 25px">
+                        @Html.LabelFor(model => model.SelectedCity, "City:", new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.SelectedCity, Model.Cities, "Click to Select City", new { @class = "form-control" })
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary" >Get Weather</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+ </div>
+

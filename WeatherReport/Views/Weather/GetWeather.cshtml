@@ -1,0 +1,28 @@
+﻿@model WeatherReport.ViewModel.CityViewModel
+
+<div class="container">
+
+    @if (Model != null)
+    {
+
+        <div class="col-xs-1" align="center">
+            <div class="card" style="width: 18rem;padding-bottom: 25px">
+                <div class="card-body">
+                    <h5 class="card-title">Weather Information for @Model.SelectedCity</h5>
+                    <p>Name: @Model.Name</p>
+                    <p>Localtime: @Model.Localtime</p>
+                    <p>Country: @Model.Country</p>
+                    <p>Region: @Model.Region</p>
+                    <p>Sunrise: @Model.Sunrise</p>
+                    <p>Sunset: @Model.Sunset</p>
+                    <p>Moonrise: @Model.Moonrise</p>
+                    <p>Moonset: @Model.Moonset</p>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Weather")'">Back to Country</button>
+            </div>
+
+        </div>
+    }
+</div>
